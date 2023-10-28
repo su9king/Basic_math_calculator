@@ -1,18 +1,35 @@
 package Basic_math_calculator;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Main{
 
     public static void main(String[] args) {
-        System.out.println("반갑다 어리석은 닝겐");
 
-        setting_option Screen = new setting_option();
+        //setting_option Screen = new setting_option();
 
-
-        creating_font message = new creating_font("True",100,50,500,300);
+        creating_font message = new creating_font("하이루!",100,50,500,300);
         message.data_check();
-        message.show_message(Screen);
+        
+         // JFrame 생성
+        JFrame frame = new JFrame("Text Output Example");
+        
+        // 출력할 문자열
+        String text = "Hello, World!";
+        
+        // JLabel 생성 및 문자열 설정
+        JLabel label = new JLabel(text);
+        
+        // JLabel을 JFrame의 content pane으로 설정
+        frame.getContentPane().add(label);
+        
+        // JFrame 크기 및 위치 설정
+        frame.setSize(300, 200);
+        frame.setLocationRelativeTo(null);  // 화면 중앙에 표시
+        
+        // JFrame을 보이도록 설정
+        frame.setVisible(true);
         
         
 
