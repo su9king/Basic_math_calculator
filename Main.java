@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 
 public class Main{
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         //setting_option Screen = new setting_option();
 
@@ -31,10 +31,10 @@ public class Main{
         // JFrame을 보이도록 설정
         frame.setVisible(true);
         
-        
-
     }
+
 }
+
 
 
 //2023.10.26 목 23:21

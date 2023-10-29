@@ -37,7 +37,7 @@ public class creating_font {
 
         Screen.add(la);
 
-        System.out.println("작동을 했ㄷ으면 말을 해라");
+        System.out.println("작동을 했으면 말을 해라");
     }
     
 
