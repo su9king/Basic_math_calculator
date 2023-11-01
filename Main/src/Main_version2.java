@@ -1,11 +1,9 @@
 import javax.swing.*;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main {
+public class Main_version2 {
 
 
 
