@@ -8,7 +8,7 @@ public class Main_version2 {
     public static void main(String[] args) {
 
         new SelectScreen();
-
+        new SelectScreen();
 
 
 
