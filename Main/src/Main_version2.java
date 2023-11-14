@@ -1,12 +1,14 @@
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.FlowLayout;
 
 public class Main_version2 {
 
+    //define global variable
+    private JFrame frame;
+    private JButton matrixButton;
 
     // Main execution part
     public Main_version2(){
@@ -20,16 +22,19 @@ public class Main_version2 {
     ////// Define function
     //setting Frame
     public void createFrame() {
-        JFrame frame = new JFrame("SMC_Calculator");
+
+        frame = new JFrame("SMC_Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setSize(500, 300);
         frame.setLocationRelativeTo(null);
 
-        frame.setVisible(true);
     }
 
-    public void createButton() {
+    private void createButton() {
+
+        matrixButton = new JButton("행렬 계산");
+
 
     }
 
@@ -37,7 +42,13 @@ public class Main_version2 {
 
     }
 
-    public void setDisplay(){
+    private void setDisplay(){
+
+        JPanel panel = new JPanel(new FlowLayout());
+        frame.add(panel);
+        panel.add(matrixButton);
+
+        frame.setVisible(true);
 
     }
 
