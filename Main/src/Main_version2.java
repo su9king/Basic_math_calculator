@@ -9,14 +9,13 @@ public class Main_version2 {
     //define global variable
     private JFrame frame;
     private JButton matrixButton;
-
     // Main execution part
     public Main_version2(){
 
         createFrame();
         createButton();
-        setDisplay();
         setButtonAction();
+        setDisplay();
 
     }
     ////// Define function
@@ -36,11 +35,36 @@ public class Main_version2 {
         matrixButton = new JButton("행렬 계산");
 
 
+
     }
 
     public void setButtonAction(){
 
-    }
+
+        //버튼 액션 첫번째 방법_현재 이 함수로 사용결정.
+        matrixButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Matrix();
+            }
+        });
+
+
+        //버튼 액션 두번째 방법
+        ActionListener listener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                if (matrixButton.equals(ae.getSource())) {
+                    System.out.println("함수작동");
+
+                }
+
+            }
+        };
+        matrixButton.addActionListener(listener);
+
+    };
 
     private void setDisplay(){
 
