@@ -8,7 +8,7 @@ public class Matrix {
     public Matrix(){
 
 
-        System.out.println("하이룽?");
+        //뇌정지왔다.
 
 
     }

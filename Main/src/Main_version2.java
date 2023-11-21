@@ -7,11 +7,10 @@ import java.awt.FlowLayout;
 public class Main_version2 {
 
     //define global variable
-    private JFrame frame;
+    public JFrame frame;
     private JButton matrixButton;
     // Main execution part
     public Main_version2(){
-
         createFrame();
         createButton();
         setButtonAction();
@@ -43,30 +42,28 @@ public class Main_version2 {
 
         //버튼 액션 첫번째 방법_현재 이 함수로 사용결정.
         matrixButton.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 new Matrix();
             }
         });
 
-
-        //버튼 액션 두번째 방법
-        ActionListener listener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-
-                if (matrixButton.equals(ae.getSource())) {
-                    System.out.println("함수작동");
-
-                }
-
-            }
-        };
-        matrixButton.addActionListener(listener);
+        //버튼 액션생성 코드 두번째 형태 위쪽의 형태가 클린하지만 일단 냅둠.
+//        ActionListener listener = new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent ae) {
+//
+//                if (matrixButton.equals(ae.getSource())) {
+//                    System.out.println("함수작동");
+//
+//                }
+//
+//            }
+//        };
+//        matrixButton.addActionListener(listener);
 
     };
 
-    private void setDisplay(){
+    public void setDisplay(){
 
         JPanel panel = new JPanel(new FlowLayout());
         frame.add(panel);
