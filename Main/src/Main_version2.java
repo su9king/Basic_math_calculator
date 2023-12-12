@@ -7,10 +7,11 @@ import java.awt.FlowLayout;
 public class Main_version2 {
 
     //define global variable
-    public JFrame frame;
+    public static JFrame frame;
     private JButton matrixButton;
     // Main execution part
     public Main_version2(){
+
         createFrame();
         createButton();
         setButtonAction();
@@ -19,7 +20,7 @@ public class Main_version2 {
     }
     ////// Define function
     //setting Frame
-    public void createFrame() {
+    public static void createFrame() {
 
         frame = new JFrame("SMC_Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,7 +35,6 @@ public class Main_version2 {
         matrixButton = new JButton("행렬 계산");
 
 
-
     }
 
     public void setButtonAction(){
@@ -45,6 +45,7 @@ public class Main_version2 {
             public void actionPerformed(ActionEvent e) {
                 new Matrix();
             }
+
         });
 
         //버튼 액션생성 코드 두번째 형태 위쪽의 형태가 클린하지만 일단 냅둠.
@@ -78,6 +79,7 @@ public class Main_version2 {
     public static void main(String[] args) {
 
         new Main_version2();
+
 
     }
 
