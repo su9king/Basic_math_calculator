@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class Main extends JFrame {
+public class drawMatrix extends JFrame {
 
     static final long serialVersionUID = 0;
 
@@ -26,13 +26,13 @@ public class Main extends JFrame {
     public void init(List<?>... list)    {
 
         // 1칸당 80px
-        System.out.println(list.length);
         maxSize = list[0].size();
+        System.out.println(maxSize);
         for(List<?> i : list) {
             if(i.size() > maxSize)  maxSize = i.size();
         }
         this.setSize(80 * maxSize, 40 + 80 * list.length);
-        this.setTitle("Array");
+        this.setTitle("Matrix Calculator");
         this.setLocationRelativeTo(null);  // 정중앙 위치에 배치
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -47,12 +47,12 @@ public class Main extends JFrame {
         this.setVisible(true);  // setVisible을 이곳에서 실행
     }
 
-    public Main(int[] intArr) {
+    public drawMatrix(int[] intArr) {
         // To boxed list (int -> Integer)
         List<Integer> tempList =  Arrays.stream( intArr ).boxed().collect( Collectors.toList() );
         init(tempList);
     }
-    public Main(int[][] intArr) {
+    public drawMatrix(int[][] intArr) {
         List<?>[] tempArr = new List<?>[intArr.length];
         System.out.println(intArr.length);
         for(int i = 0; i < tempArr.length; i++) {
@@ -61,7 +61,7 @@ public class Main extends JFrame {
         init(tempArr);
     }
     // Character는 위와 같은 stream을 쓰는 방법이 불가능
-    public Main(char[] charArr) {
+    public drawMatrix(char[] charArr) {
         List<Character> tempList = new ArrayList<>();
         for(char c : charArr) {
             tempList.add((Character) c);
@@ -69,7 +69,7 @@ public class Main extends JFrame {
         init(tempList);
     }
 
-    public Main(char[][] charArr) {
+    public drawMatrix(char[][] charArr) {
         List<?>[] tempArr = new List<?>[charArr.length];
         for(int i = 0; i < tempArr.length; i++) {
             List<Character> tempList = new ArrayList<>();
@@ -125,7 +125,7 @@ public class Main extends JFrame {
         int[][] example = {{12, 2, 50, 4, 11, 169, 83 ,61, 200},
                 {300, 542, 396, 8833},
                 {15234, 59, 1932}};
-        new Main(example);
+        new drawMatrix(example);
 
     }
 
