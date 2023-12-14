@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Matrix {
 
@@ -8,14 +10,39 @@ public class Matrix {
     private int maxSize;
     public Matrix(){
         String input = JOptionPane.showInputDialog(null, "첫번째 행렬의 행을 입력해주세요.");
-        int number = Integer.parseInt(input);
-        System.out.println(number);
+        int row = Integer.parseInt(input);
+        System.out.println(row);
 
+        input = JOptionPane.showInputDialog(null, "첫번째 행렬의 열을 입력해주세요.");
+        int column = Integer.parseInt(input);
+        System.out.println(column);
 
-        int[][] example = {{0,3,4},
-                            {4,0,2},
-                            {7,0,0}};
-        new drawMatrix(example);
+        //1차원 행렬
+        if (column == 0){
+            int [] example = new int[row];
+
+            for(int i=0;i<row;i++){
+                example[i] = -1;
+
+            }
+
+            new drawMatrix(example);
+        }
+
+        else {
+
+            int[][] example = new int[row][column];
+
+            for (int j = 0; j < column; j++) {
+                for (int i = 0; i < row; i++) {
+                    example[i][j] = -1;
+
+                }
+            }
+
+            new drawMatrix(example);
+        }
+
 
 
 
